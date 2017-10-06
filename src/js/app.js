@@ -1,2 +1,4 @@
 var ddService = require("./services/dropdown-evaluator");
-ddService.listenForDropDown();
+ddService.listenForDropDown({
+  "labelTargetSelector" : ".real-target"
+});

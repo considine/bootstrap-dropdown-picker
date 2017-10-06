@@ -17,17 +17,22 @@ module.exports = {
    */
   listenForDropDown : function (options) {
     options = options || {};
-    var dropdownMenuSelector = options.menuSelector || ".dropdown-module .dropdown-menu a";
-    var labelTargetSelector = options.labelTargetSelector || ".dropdown-selection-wrapper .dropdown-selection";
-    var inputTargetSelector = options.inputTargetSelector || ".dropdown-selection-wrapper input";
+    var dropdownMenuSelector = defaultFor(options.menuSelector, ".dropdown-module .dropdown-menu a");
+    var labelTargetSelector = defaultFor(options.labelTargetSelector, ".dropdown-module .dropdown-selection-wrapper .dropdown-selection");
+    var inputTargetSelector = defaultFor(options.inputTargetSelector, ".dropdown-module .dropdown-selection-wrapper input");
+
+    console.log(labelTargetSelector);
     // var labelTargetSelector = options.
     var dropdownDataSelector = options.dataselector || "dropdownval";
 
     $(dropdownMenuSelector).click(function() {
-      $(labelTargetSelector).text($( this ).text());
+      var text = $( this ).text();
+      console.log(text);
+      $(labelTargetSelector).text(text);
       $(inputTargetSelector).val( $( this ).data(dropdownDataSelector) );
-      console.log(inputTargetSelector);
       // $(inputTargetSelector).val( $( this ).data( dropdownDataSelector) );
     });
   }
 }
+
+function defaultFor(arg, val) { return typeof arg !== 'undefined' ? arg : val; }
