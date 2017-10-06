@@ -20,6 +20,7 @@ module.exports = {
     var dropdownMenuSelector = defaultFor(options.menuSelector, ".dropdown-module .dropdown-menu a");
     var labelTargetSelector = defaultFor(options.labelTargetSelector, ".dropdown-module .dropdown-selection-wrapper .dropdown-selection");
     var inputTargetSelector = defaultFor(options.inputTargetSelector, ".dropdown-module .dropdown-selection-wrapper input");
+    var inputTargetName = defaultFor(options.inputTargetName, "input-dropdown");
 
     console.log(labelTargetSelector);
     // var labelTargetSelector = options.
@@ -29,6 +30,7 @@ module.exports = {
       var text = $( this ).text();
       console.log(text);
       $(labelTargetSelector).text(text);
+      $(inputTargetSelector).attr('name', inputTargetName)
       $(inputTargetSelector).val( $( this ).data(dropdownDataSelector) );
       // $(inputTargetSelector).val( $( this ).data( dropdownDataSelector) );
     });
