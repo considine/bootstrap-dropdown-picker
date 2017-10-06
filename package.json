@@ -1,0 +1,26 @@
+{
+  "name": "bootstrap-dropdown-selector",
+  "version": "1.0.0",
+  "description": "A plugin to leverage the bootstrap dropdown item more effectively, placing the selection in a label, and a value in a hidden input if it is a form ",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jack Considine <jackconsidine3@gmail.com> (jackconsidine.wordpress.com)",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^3.6.0"
+  },
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.2.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/considine/bootstrap-dropdown-picker.git"
+  },
+  "bugs": {
+    "url": "https://github.com/considine/bootstrap-dropdown-picker/issues"
+  },
+  "homepage": "https://github.com/considine/bootstrap-dropdown-picker#readme"
+}
