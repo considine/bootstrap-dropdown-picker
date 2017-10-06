@@ -10328,9 +10328,7 @@ return jQuery;
 /***/ (function(module, exports, __webpack_require__) {
 
 var ddService = __webpack_require__(2);
-ddService.listenForDropDown({
-  "labelTargetSelector" : ".real-target"
-});
+ddService.listenForDropDown();
 
 
 /***/ }),
@@ -10355,7 +10353,7 @@ module.exports = {
    * @return {[type]}         [description]
    */
   listenForDropDown : function (options) {
-    options = options || {};
+    options = defaultFor(options, {});
     var dropdownMenuSelector = defaultFor(options.menuSelector, ".dropdown-module .dropdown-menu a");
     var labelTargetSelector = defaultFor(options.labelTargetSelector, ".dropdown-module .dropdown-selection-wrapper .dropdown-selection");
     var inputTargetSelector = defaultFor(options.inputTargetSelector, ".dropdown-module .dropdown-selection-wrapper input");
