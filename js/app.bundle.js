@@ -10346,13 +10346,13 @@ ddService.listenForDropDown();
 __webpack_require__(0);
 
 
-module.exports = {
+module.exports = new (function () {
   /**
    * [description]
    * @param  {[type]} options [description]
    * @return {[type]}         [description]
    */
-  listenForDropDown : function (options) {
+  this.listenForDropDown = function (options) {
     options = defaultFor(options, {});
     var rootModuleSelector = defaultFor(options.rootModuleSelector, '.dropdown-module');
     var dropdownMenuSelector = defaultFor(options.menuSelector, " .dropdown-menu a");
@@ -10379,7 +10379,7 @@ module.exports = {
       // $(inputTargetSelector).val( $( this ).data( dropdownDataSelector) );
     });
   }
-}
+});
 
 function defaultFor(arg, val) { return typeof arg !== 'undefined' ? arg : val; }
 
