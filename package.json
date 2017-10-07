@@ -1,6 +1,6 @@
 {
   "name": "bootstrap-dropdown-selector",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A plugin to leverage the bootstrap dropdown item more effectively, placing the selection in a label, and a value in a hidden input if it is a form ",
   "main": "main.js",
   "scripts": {
