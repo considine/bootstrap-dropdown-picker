@@ -9,7 +9,7 @@
 require("jquery");
 
 
-module.exports = new (function () {
+module.exports = function () {
   /**
    * [description]
    * @param  {[type]} options [description]
@@ -42,6 +42,6 @@ module.exports = new (function () {
       // $(inputTargetSelector).val( $( this ).data( dropdownDataSelector) );
     });
   }
-});
+};
 
 function defaultFor(arg, val) { return typeof arg !== 'undefined' ? arg : val; }

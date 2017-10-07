@@ -1,2 +1,4 @@
-var ddService = require("./services/dropdown-evaluator");
+var DDService = require("./services/dropdown-evaluator");
+
+var ddService = new DDService();
 ddService.listenForDropDown();

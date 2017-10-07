@@ -10327,7 +10327,9 @@ return jQuery;
 /* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var ddService = __webpack_require__(2);
+var DDService = __webpack_require__(2);
+
+var ddService = new DDService();
 ddService.listenForDropDown();
 
 
@@ -10346,7 +10348,7 @@ ddService.listenForDropDown();
 __webpack_require__(0);
 
 
-module.exports = new (function () {
+module.exports = function () {
   /**
    * [description]
    * @param  {[type]} options [description]
@@ -10379,7 +10381,7 @@ module.exports = new (function () {
       // $(inputTargetSelector).val( $( this ).data( dropdownDataSelector) );
     });
   }
-});
+};
 
 function defaultFor(arg, val) { return typeof arg !== 'undefined' ? arg : val; }
 
