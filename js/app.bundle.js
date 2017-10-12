@@ -10364,7 +10364,22 @@ module.exports = function () {
 
     console.log(labelTargetSelector);
     // var labelTargetSelector = options.
-    var dropdownDataSelector = options.dataselector || "dropdownval";
+    var dropdownDataSelector = defaultFor(options.dataselector, "dropdownval");
+
+    // initialize value to the initial radio button amoutn
+    $( inputTargetSelector ).each(function() {
+      if ($( this ).val() != null && $( this ).val() !== "") {
+        // See if the vlaue that is already set is equal to a dropdown value
+        var $this = $( this );
+        $this.parentsUntil( rootModuleSelector ).parent().find(dropdownMenuSelector).each(function () {
+          if ($(this).data(dropdownDataSelector) === $this.val()) {
+            var label = $( this ).parentsUntil( rootModuleSelector ).parent().find(labelTargetSelector);
+            var text = $( this ).text();
+            label.text(text);
+          }
+        });
+      }
+    });
 
     $(rootModuleSelector + " " + dropdownMenuSelector).click(function() {
       var text = $( this ).text();
